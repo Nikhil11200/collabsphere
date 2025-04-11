@@ -7,11 +7,11 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 
-const API_BASE_URL = "http://localhost:8080/api";
+const API_BASE_URL = "http://localhost:8080/";
 
 const BrandRegister = () => {
   const [companyName, setCompanyName] = useState("");
-  const [email, setEmail] = useState("");
+  const [businessEmail, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -22,14 +22,14 @@ const BrandRegister = () => {
     setLoading(true);
 
     try {
-      const response = await fetch(`${API_BASE_URL}/auth/register/brand`, {
+      const response = await fetch(`${API_BASE_URL}register/brand`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           companyName,
-          email,
+          businessEmail,
           password,
           userType: 'brand',
         }),
@@ -85,7 +85,7 @@ const BrandRegister = () => {
                 id="email"
                 type="email"
                 placeholder="Enter your business email"
-                value={email}
+                value={businessEmail}
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />

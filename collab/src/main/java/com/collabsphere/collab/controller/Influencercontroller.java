@@ -1,2 +1,4 @@
-package com.collabsphere.collab.controller;public class Influencercontroller {
+package com.collabsphere.collab.controller;
+
+public class Influencercontroller {
 }
