@@ -10,7 +10,7 @@ import java.util.Optional;
 @Repository
 
 public interface Brandrepo extends JpaRepository<Brand, Long > {
-    Optional<Brand> findByBusinessEmail(String businessEmail);
+    Brand findByBusinessEmail(String businessEmail);
 
     boolean existsByBusinessEmail(String email);
 }
